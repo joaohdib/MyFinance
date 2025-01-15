@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const paymentController = require('./controllers/paymentController');
+const loginController = require('./controllers/loginController');
 const app = express();
 const cors = require('cors');
 
@@ -20,4 +21,5 @@ app.delete(`/payment`, paymentController.deletePayment);
 app.get(`/payment`, paymentController.getPayment)
 app.get(`/findPayment`, paymentController.findPayments);
 
-//...
+//Login
+app.post("/login", loginController.createLogin);
