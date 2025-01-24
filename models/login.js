@@ -4,12 +4,15 @@ const loginSchema = new Schema({
 
     email: {
         type: String,
-        required:true  
+        required: true,
+        unique: true,
+        lowercase: true,
     },
 
     password: {
         type: String,
-        required:true
+        required:true,
+        minlength: 5,
     },
 })
 
